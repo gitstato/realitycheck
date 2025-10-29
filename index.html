@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Realit Check</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Reality Check</h1>
+            <div class="settings">
+                <label for="timer">Auto-rotate every:</label>
+                <select id="timer">
+                    <option value="0">Off</option>
+                    <option value="5">5 seconds</option>
+                    <option value="10">10 seconds</option>
+                    <option value="15" selected>15 seconds</option>
+                    <option value="30">30 seconds</option>
+                    <option value="60">1 minute</option>
+                </select>
+                <button id="fullscreen-btn" class="btn fullscreen">Fullscreen</button>
+                <button id="theme-toggle" class="btn theme">Dark Mode</button>
+            </div>
+        </header>
+
+        <main>
+            <div class="question-container">
+                <div class="category" id="category"></div>
+                <div class="question" id="question"></div>
+                <div class="question-info">
+                    <span id="question-number"></span>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button id="shuffle-btn" class="btn primary">Shuffle Question</button>
+                <button id="answer-btn" class="btn secondary">Record Answer</button>
+                <button id="show-answer-btn" class="btn tertiary" style="display: none;">Show Previous Answer</button>
+            </div>
+
+            <div class="answer-section" id="answer-section" style="display: none;">
+                <h3>Your Answer</h3>
+                <textarea id="answer-input" placeholder="Share your thoughts..."></textarea>
+                <div class="answer-controls">
+                    <button id="save-answer-btn" class="btn primary">Save Answer</button>
+                    <button id="cancel-answer-btn" class="btn secondary">Cancel</button>
+                </div>
+            </div>
+
+            <div class="previous-answer" id="previous-answer" style="display: none;">
+                <h3>Previous Answer</h3>
+                <div class="answer-content" id="answer-content"></div>
+                <div class="answer-date" id="answer-date"></div>
+                <button id="add-new-answer-btn" class="btn primary">Add New Answer</button>
+            </div>
+        </main>
+
+        <footer>
+            <div class="stats">
+                <span>Questions answered: <span id="answered-count">0</span></span>
+                <span>Total questions: <span id="total-count">0</span></span>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Fullscreen overlay -->
+    <div id="fullscreen-overlay" class="fullscreen-overlay">
+        <div class="fullscreen-question" id="fullscreen-question"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
